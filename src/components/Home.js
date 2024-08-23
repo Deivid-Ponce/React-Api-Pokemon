@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './Home.css';
+import { AppH1 } from './styles';
 
 const Home = () => {
     const [pokemons, setPokemons] = useState([]);
@@ -27,7 +28,7 @@ const Home = () => {
 
     return (
         <div className="home">
-            <h1>Pokémon List</h1>
+            <AppH1 >Pokémon List</AppH1>
             <ul>
                 {pokemons.map((pokemon, index) => (
                     <li key={index}>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import './Home.css';
+import { AppButton, AppDiv, AppH1, AppImg } from './styles';
 
 
 const PokemonDetail = () => {
@@ -30,14 +31,14 @@ const PokemonDetail = () => {
     if (!pokemon) return <p>No Pokémon found!</p>;
 
     return (
-        <div className="pokemon-detail">
-            <h1>{pokemon.name}</h1>
-            <img src={pokemon.sprites.front_default} alt={pokemon.name} />
+        <AppDiv className="pokemon-detail">
+            <AppH1 nombre='title'>{pokemon.name}</AppH1>
+            <AppImg src={pokemon.sprites.front_default} alt={pokemon.name} />
             <p>Height: {pokemon.height}</p>
             <p>Weight: {pokemon.weight}</p>
             <p>Type: {pokemon.types.map(type => type.type.name).join(', ')}</p>
-            <button><a href='http://localhost:3000/'>Regresar</a></button>
-        </div>
+            <AppButton variant='return'><a href='http://localhost:3000/'>Regresar</a></AppButton>
+        </AppDiv>
     );
 };
 
